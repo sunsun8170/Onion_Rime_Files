@@ -16,6 +16,7 @@ local function tran_utf8_debug_comment(tran)
     --       and UniquifiedCandidate(cand, "uniq_unicode_debug", cand_text, debug_comment(cand) .. cand.comment) or
     --       cand
     --       )
+    local cand = cand
     if utf8.len(cand_text) == 1 then
       cand = UniquifiedCandidate(cand, "uniq_unicode_debug", cand_text, debug_comment(cand) .. utf8_comment(cand_text) .. cand.comment)
     else
