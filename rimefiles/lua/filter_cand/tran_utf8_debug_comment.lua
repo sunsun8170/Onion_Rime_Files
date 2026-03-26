@@ -16,7 +16,7 @@ local function tran_utf8_debug_comment(tran)
     --       and UniquifiedCandidate(cand, "uniq_unicode_debug", cand_text, debug_comment(cand) .. cand.comment) or
     --       cand
     --       )
-    local cand = cand
+    local cand = cand  -- 於「Lua 5.5」須避免重新賦值 for 迴圈變數 cand。（for 迴圈中的控制變數是唯讀的。如果需要更改它，請在循環體中聲明一個同名的「局部變數」。）
     if utf8.len(cand_text) == 1 then
       cand = UniquifiedCandidate(cand, "uniq_unicode_debug", cand_text, debug_comment(cand) .. utf8_comment(cand_text) .. cand.comment)
     else
