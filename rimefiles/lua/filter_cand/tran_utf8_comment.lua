@@ -15,11 +15,10 @@ local function tran_utf8_comment(tran)
     -- -- local cand = UniquifiedCandidate(cand, "uniq_unicode", cand_text, utf8_comment(cand_text) .. cand.comment)
     -- yield(cand)
     --- 寫法二
-    local u_cand = utf8.len(cand_text) == 1 and UniquifiedCandidate(cand, "uniq_unicode", cand_text, utf8_comment(cand_text) .. cand.comment)
-                or cand
+    local u_cand = utf8.len(cand_text) == 1 and UniquifiedCandidate(cand, "uniq_unicode", cand_text, utf8_comment(cand_text) .. cand.comment) or cand
     yield(u_cand)
     -- --- 寫法三
-    -- yield(utf8.len(cand_text) == 1 and UniquifiedCandidate(cand, "uniq_unicode", cand_text, utf8_comment(cand_text) .. cand.comment) or cand)
+    -- yield( utf8.len(cand_text) == 1 and UniquifiedCandidate(cand, "uniq_unicode", cand_text, utf8_comment(cand_text) .. cand.comment) or cand )
   end
 end
 

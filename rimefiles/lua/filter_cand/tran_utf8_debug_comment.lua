@@ -30,9 +30,8 @@ local function tran_utf8_debug_comment(tran)
                                              or UniquifiedCandidate(cand, "uniq_unicode_debug", cand_text, debug_comment(cand) .. cand.comment)
     yield(u_cand)
     -- --- 寫法三
-    -- yield(utf8.len(cand_text) == 1 and UniquifiedCandidate(cand, "uniq_unicode_debug", cand_text, debug_comment(cand) .. utf8_comment(cand_text) .. cand.comment)
-    --    or UniquifiedCandidate(cand, "uniq_unicode_debug", cand_text, debug_comment(cand) .. cand.comment)
-    --      )
+    -- yield( utf8.len(cand_text) == 1 and UniquifiedCandidate(cand, "uniq_unicode_debug", cand_text, debug_comment(cand) .. utf8_comment(cand_text) .. cand.comment) or
+    --                                     UniquifiedCandidate(cand, "uniq_unicode_debug", cand_text, debug_comment(cand) .. cand.comment) )
   end
 end
 
